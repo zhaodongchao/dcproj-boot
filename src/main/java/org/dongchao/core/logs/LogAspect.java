@@ -10,6 +10,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Arrays;
 
 /**
  * Created by zhaodongchao on 2017/5/5.
@@ -30,10 +31,12 @@ public class LogAspect {
     public void after(JoinPoint joinPoint){
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes)RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = requestAttributes.getRequest();
-        logger.info("-------->url",request.getRequestURL());
+        logger.info(request.getRemoteHost());
+        logger.info(request.getRequestURI());
+        logger.info(joinPoint.getTarget().getClass()+"."+joinPoint.getSignature().getName()+"("+ Arrays.asList(joinPoint.getArgs()).toString()+")");
     }
     @AfterReturning(pointcut = "log()",returning = "object")
     public void doAfterRetruning(Object object){
-        logger.debug("------------->"+object.toString());
+        logger.info("this method return "+object.toString());
     }
 }
