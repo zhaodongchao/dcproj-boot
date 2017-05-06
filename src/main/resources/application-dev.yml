@@ -1,0 +1,26 @@
+server:
+  port: 8081
+  context-path: /starter
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/boot
+    username: root
+    password: zdc920204
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+logging:
+  level:
+    root: warn
+    org.springframework.security: DEBUG
+  path: file://logs/
+  file: dcproj-dev.log
+
+
+
+
+
+
+

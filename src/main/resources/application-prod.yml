@@ -1,0 +1,19 @@
+server:
+  port: 80
+  context-path: /starter
+logging:
+  level:
+    root: INFO
+  path: file://logs/
+  file: dcproj-prod.log
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/boot
+    username: root
+    password: zdc920204
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+

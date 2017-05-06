@@ -1,0 +1,15 @@
+author:
+  name: zhaodongchao
+  createTime: 2017-5-5
+  telphone: 17621008632
+  email: zhaodongchao1992@gmail.com
+  company: newtouch
+  description: my name is ${author.name} ,if you have any problem call ${author.telphone} or send email to ${author.email} .
+spring:
+  profiles:
+    active: dev
+#  thymeleaf:
+#    encoding: UTF-8
+#    prefix: /templates/
+#    suffix: .html
+#    cache: false
